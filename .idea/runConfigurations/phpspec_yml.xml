@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="phpspec.yml" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+    <PhpTestRunnerSettings directory="$PROJECT_DIR$" method="" />
+    <method v="2" />
+  </configuration>
+</component>

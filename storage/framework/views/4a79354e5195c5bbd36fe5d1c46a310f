@@ -1,0 +1,122 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title"><?php echo e(trans('messages.editsite')); ?></h4>
+</div>
+<div class="modal-body ">
+
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+
+            <!-- if there are creation errors, they will show here -->
+            <?php echo e(Html::ul($errors->all())); ?>
+
+
+            <?php echo Form::model($site, ['method' => 'PUT', 'action' => ['SiteController@update', $site->id], 'autocomplete' => 'off']); ?>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <?php echo Form::label('name', trans('messages.name')); ?>
+
+
+                    <?php echo Form::text('name', $site->name, ['class' => 'form-control']); ?>
+
+                    <?php echo Form::hidden('de[name]', null, ['class' => 'form-control']); ?>
+
+
+                </div>
+                <div class="col-md-4">
+                <?php echo Form::label('opentimenoon', trans('messages.opentimenoon')); ?>
+
+                <?php echo Form::text('opentimenoon', $site->opentimenoon, ['class' => 'form-control']); ?>
+
+                </div>
+
+                <div class="col-md-4">
+                <?php echo Form::label('opentimeevening', trans('messages.opentimeevening')); ?>
+
+                <?php echo Form::text('opentimeevening', $site->opentimeevening, ['class' => 'form-control']); ?>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4">
+                <?php echo Form::label('isCafet', trans('messages.isCafet')); ?>
+
+                <?php echo Form::select('isCafet', array('0' => 'Mensa', '1' => 'Cafétéria'), $site->isCafet, ['class' => 'form-control']); ?>
+
+                </div>
+                <div class="col-md-8">
+                    <?php echo Form::label('address', trans('messages.address')); ?>
+
+                    <?php echo Form::text('address', $site->address, ['class' => 'form-control']); ?>
+
+                    <?php echo Form::hidden('de[address]', null, ['class' => 'form-control']); ?>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- <?php echo Form::label('image', 'Photo'); ?> -->
+                    <?php echo Form::hidden('image', $site->address, ['class' => 'form-control']); ?>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                <?php echo Form::label('exportSelect', 'Libellés pour l\'export Word'); ?>
+
+                <?php echo Form::select('exportSelect', $labels, null, ['class' => 'form-control','multiple' => 'multiple','name' => 'exportSelect[]']); ?>
+
+                <?php echo Form::hidden('export', $site->export, ['class' => 'form-control','id' => 'export']); ?>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo Form::label('texte', trans('messages.texte')); ?>
+
+                    <?php echo Form::text('texte', $site->texte, ['class' => 'form-control']); ?>
+
+                    <?php echo Form::hidden('de[texte]', null, ['class' => 'form-control']); ?>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo Form::label('remark', trans('messages.remark')); ?>
+
+                    <?php echo Form::text('remark', $site->remark, ['class' => 'form-control']); ?>
+
+                    <?php echo Form::hidden('de[remark]', null, ['class' => 'form-control']); ?>
+
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+            <div class="form-group">
+                <div class="col-md-6">
+                        <a class="btn btn-block deleteButton">
+                            <i class="ti ti-trash"></i> <?php echo e(trans('messages.delete')); ?>
+
+                        </a>
+                </div>
+                <div class="col-md-6">
+                    <?php echo Form::submit( trans('messages.save'), ['class' => 'btn btn-block btn-primary']); ?>
+
+                </div>
+            </div>
+            </div>
+            <?php echo Form::close(); ?>
+
+        </div>
+    </div>
+</div>
