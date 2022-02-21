@@ -11,8 +11,6 @@
 |
 */
 
-
-
 //Route::get('logout', [ 'uses' => 'Auth\AuthController@getLogout', 'as' => 'logout' ]);
 
 //Route::controllers([
@@ -20,7 +18,6 @@
 //    'password' => 'Auth\PasswordController',
 //]);
 echo 'Test';
-
 
 /*$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
